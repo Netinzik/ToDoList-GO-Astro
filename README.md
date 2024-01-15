@@ -17,19 +17,19 @@ Este é um projeto de aplicativo de lista de tarefas (ToDoList) com o backend de
 3. Execute o servidor backend:
 
     ```bash
-    cd backend
+    cd server
     go run main.go
     ```
 
-O servidor será iniciado em `http://localhost:8080`.
+O servidor será iniciado em `http://localhost:4000`.
 
 ### Endpoints
 
-- `GET /tasks`: Obtém todas as tarefas.
-- `GET /tasks/:id`: Obtém uma tarefa específica por ID.
-- `POST /tasks`: Adiciona uma nova tarefa.
-- `PUT /tasks/:id`: Atualiza uma tarefa existente.
-- `DELETE /tasks/:id`: Exclui uma tarefa.
+- `GET /api/tasks`: Obtém todas as tarefas.
+- `GET /api/tasks/:id`: Obtém uma tarefa específica por ID.
+- `POST /api/tasks`: Adiciona uma nova tarefa.
+- `PATCH /api/tasks/:id/:status`: Atualiza uma tarefa existente.
+- `DELETE /api/tasks/:id`: Exclui uma tarefa.
 
 ## Frontend (Astro)
 
@@ -60,8 +60,12 @@ O servidor será iniciado em `http://localhost:3000`.
 
 ## Como Usar
 
-1. Acesse o aplicativo no navegador em `http://localhost:3000`.
-2. Utilize a interface intuitiva para adicionar, visualizar, atualizar e excluir tarefas.
+1. Execute tanto o server quanto o client:
+    ```bash
+    npm run dev
+    ```
+2. Acesse o aplicativo no navegador em `http://localhost:3000`.
+3. Utilize a interface intuitiva para adicionar, visualizar, atualizar e excluir tarefas.
 
 ## Contribuições
 
