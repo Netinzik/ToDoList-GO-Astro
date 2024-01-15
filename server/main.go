@@ -31,7 +31,7 @@ func main() {
 		return c.Next()
 	})
 
-	app.Post("/api/saveItem", func(c *fiber.Ctx) error {
+	app.Post("/api/tasks", func(c *fiber.Ctx) error {
 		todo := &Todo{}
 
 		if err := c.BodyParser(todo); err != nil {
@@ -44,7 +44,7 @@ func main() {
 		return c.JSON(listTodo)
 	})
 
-	app.Patch("/api/updateItem/:id/:status", func(c *fiber.Ctx) error {
+	app.Patch("/api/tasks/:id/:status", func(c *fiber.Ctx) error {
 		param := struct {
 			ID     int    `params:"id"`
 			STATUS string `params:"status"`
@@ -64,7 +64,7 @@ func main() {
 		return c.JSON(listTodo)
 	})
 
-	app.Get("/api/getList/:id", func(c *fiber.Ctx) error {
+	app.Get("/api/tasks/:id", func(c *fiber.Ctx) error {
 		id, err := c.ParamsInt("id")
 
 		if err != nil {
@@ -83,7 +83,7 @@ func main() {
 
 	})
 
-	app.Delete("/api/deleteItem/:id", func(c *fiber.Ctx) error {
+	app.Delete("/api/tasks/:id", func(c *fiber.Ctx) error {
 		id, err := c.ParamsInt("id")
 
 		if err != nil {
