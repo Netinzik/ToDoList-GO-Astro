@@ -5,9 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "cd server && ",
-    "client": "cd client && npm run dev"
+    "server": "cd server && go run main.go",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently --kill-others \"npm run server\" \"npm run client\""
   },
   "author": "Sebastião Neto",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
