@@ -2,7 +2,7 @@ module github.com/Netinzik/ToDoList-GO-Astro
 
 go 1.21.4
 
-require github.com/gofiber/fiber/v2 v2.52.1
+require github.com/gofiber/fiber/v2 v2.52.5
 
 require (
 	github.com/andybalholm/brotli v1.1.0 // indirect
